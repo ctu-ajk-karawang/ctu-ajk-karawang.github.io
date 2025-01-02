@@ -14,7 +14,7 @@
   --text-color: #ffffff;
   --secondary-text: #a4a5b8;
   --primary-color: #3a435d;
-  --accent-color: #06bb00;
+  --accent-color: #06a800;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -36,7 +36,7 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 a:hover {
@@ -146,7 +146,7 @@ h6 {
 }
 
 .header .topbar .contact-info i a:hover {
-  color: var(--contrast-color);
+  color: var(--secondary-text);
   text-decoration: none;
 }
 
@@ -177,9 +177,11 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0;
   font-weight: 600;
+  line-height: 1;
+  font-family: sans-serif;
   color: var(--text-color);
   font-style: italic;
 }
@@ -188,7 +190,7 @@ h6 {
 }
 
 .scrolled .header {
-  box-shadow: 0px 0 14px rgba(21, 252, 0, 0.438);
+  box-shadow: 0 0 10px rgba(0, 0, 0);
 }
 
 .scrolled .header .topbar {
@@ -310,7 +312,7 @@ h6 {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: var(--text-color);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -684,7 +686,7 @@ h6 {
   opacity: 0;
   right: 15px;
   bottom: 15px;
-  z-index: 99999;
+  z-index: 8888;
   background-color: var(--accent-color);
   width: 40px;
   height: 40px;
@@ -841,6 +843,7 @@ section,
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
+  transition: all 0.5s;
 }
 
 .hero h1 span {
@@ -855,22 +858,24 @@ section,
 }
 
 .hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: var(--text-color);
+  background-color: var(--base-variant);
   font-family: var(--heading-font);
   font-weight: 600;
   font-size: 16px;
+  padding: 10px 20px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 12px 30px;
-  border: none;
+  text-align: center;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  border: 2px solid var(--accent-color);
 }
 .hero .btn-get-started:hover {
-  color: var(--text-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 18%);
-  transition: all 0.3s ease;
-  inset: 100% 0 0 0;
-  border-radius: 18px;
+  color: var(--accent-color);
+  transition: 0.3s ease;
+  background-color: var(--base-color);
+  box-shadow: 0 0 10px #059652;
 }
 .hero .btn-watch-video {
   font-size: 16px;
@@ -878,11 +883,13 @@ section,
   margin-left: 25px;
   color: var(--default-color);
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .hero .btn-watch-video i {
   color: var(--text-color);
   font-size: 32px;
+  letter-spacing: 1px;
   transition: 0.3s;
   line-height: 0;
   margin-right: 8px;
@@ -1117,6 +1124,7 @@ section,
   padding: 80px 20px;
   transition: border ease-in-out 0.3s;
   height: 100%;
+  border-radius: 8px;
 }
 
 .services .service-item .icon {
@@ -1124,8 +1132,7 @@ section,
   width: 64px;
   height: 64px;
   background: var(--base-variant);
-  color: var(--accent-color);
-  border-radius: 5px;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1134,7 +1141,7 @@ section,
 }
 .services .service-item .icon i {
   font-size: 28px;
-  transition: ease-in-out 0.3s;
+  transition: 0.5s;
 }
 
 .services .service-item h3 {
@@ -1146,19 +1153,24 @@ section,
 
 .services .service-item p {
   line-height: 24px;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 0;
 }
 
 .services .service-item:hover {
   transition: 0.5s ease;
   box-shadow: 0 0 10px var(--accent-color);
+  transform: translateY(-5px);
 }
 
 .services .service-item:hover h3 {
   color: var(--accent-color);
 }
-
+.services .service-item:hover .icon {
+  color: var(--accent-color);
+  background: transparent;
+  transition: 0.5s ease;
+}
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1259,88 +1271,6 @@ section,
   opacity: 1;
   bottom: 0;
 }
-
-/*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
-.team .team-member {
-  background-color: var(--base-variant);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.team .team-member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--base-variant), transparent 20%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: var(--text-color);
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a i {
-  line-height: 0;
-}
-
-.team .team-member .social a:hover {
-  color: var(--accent-color);
-}
-
-.team .team-member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.team .team-member .member-info {
-  padding: 25px 15px;
-  text-align: center;
-}
-
-.team .team-member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: color-mix(in srgb, var(--text-color), transparent 20%);
-}
-
-.team .team-member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--text-color), transparent 40%);
-}
-
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--text-color), transparent 40%);
-}
-
-.team .team-member:hover .social {
-  opacity: 1;
-}
-
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
@@ -1457,8 +1387,7 @@ section,
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid
-    color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid;
   margin: 20px 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
