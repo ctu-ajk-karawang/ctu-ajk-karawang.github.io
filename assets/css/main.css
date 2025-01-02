@@ -124,13 +124,17 @@ h6 {
 
 .header .topbar .contact-info i {
   font-style: normal;
+  color: var(--secondary-text);
+}
+
+.header .topbar .contact-info i:hover {
   color: var(--text-color);
 }
 
 .header .topbar .contact-info i a,
 .header .topbar .contact-info i span {
   padding-left: 5px;
-  color: var(--text-color);
+  color: var(--secondary-text);
 }
 
 @media (max-width: 575px) {
@@ -146,7 +150,7 @@ h6 {
 }
 
 .header .topbar .contact-info i a:hover {
-  color: var(--secondary-text);
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -868,7 +872,7 @@ section,
   display: inline-block;
   text-align: center;
   border-radius: 50px;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
   border: 2px solid var(--accent-color);
 }
 .hero .btn-get-started:hover {
